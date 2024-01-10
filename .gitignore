@@ -1,0 +1,5 @@
+.vscode/
+Logs/
+wandb/
+datasets/
+*/__pycache__/
