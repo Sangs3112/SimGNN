@@ -7,7 +7,7 @@ SimGNN:
     gpu_index: 1          # 如果写-1，表示用cpu进行计算
     batch_size: 128
     lr: 0.001
-    wandb: True           # 是否使用wandb联网记录训练结果
+    wandb: False          # 是否使用wandb联网记录训练结果
 
     histogram: True       # 是否使用直方图 所有人，除了官方，都不用直方图。我看了所有版本的SimGNN，无一例外都把直方图关了。因为加上以后这个性能是真的差。
     tensor_neurons: 16
