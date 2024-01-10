@@ -1,12 +1,13 @@
 # [SimGNN](https://arxiv.org/abs/1808.05689):
 `[WSDM 2019] SimGNN: A Neural Network Approach to Fast Graph Similarity Computation`
 
-**本实现完全按照SimGNN论文中的代码设置进行模型编写**
+**本实现完全按照[SimGNN论文](https://arxiv.org/abs/1808.05689)中的代码设置进行模型编写**
 
 ![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
 ![PyPI - Version](https://img.shields.io/pypi/v/pypi)
 
 中文版 | [English](./README_en.md)
+
 ## 目录结构:
 ```
 SimGNN/
@@ -35,11 +36,12 @@ SimGNN/
 > 
 > 3. 解压缩完成后进入`datasets/`目录，使用相同的命令再次解压缩四个数据集即可
 >
-> P.s: 实际上，如果你不下载我提供的数据集，也可以只在`SimGNN/`项目根目录下创建`datasets/`目录即可，`GEDDataset`函数会自动进行数据集的下载。
+> P.s: 实际上，如果你不下载我提供的数据集，也可以直接在`SimGNN/`项目根目录下创建`datasets/`目录，此时`GEDDataset`函数会自动下载数据集。
 
 ## 环境依赖:
 ```
 pyyaml == 6.0.1
+wandb == 0.16.2
 python == 3.9
 numpy == 1.26
 scipy == 1.11

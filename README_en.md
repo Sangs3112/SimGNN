@@ -1,12 +1,13 @@
 # [SimGNN](https://arxiv.org/abs/1808.05689):
 `[WSDM 2019] SimGNN: A Neural Network Approach to Fast Graph Similarity Computation`
 
-**This implementation is modeled exactly according to the code setup in the SimGNN paper**
+**This implementation is modeled exactly according to the code setup in the [SimGNN paper](https://arxiv.org/abs/1808.05689)**
 
 ![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
 ![PyPI - Version](https://img.shields.io/pypi/v/pypi)
 
 [Chinese](./README.md) | English
+
 ## directory structure:
 ```
 SimGNN/
@@ -35,7 +36,7 @@ SimGNN/
 >
 > 3. After the decompression is complete, `cd datasets/` and use the same command to decompress the four datasets again
 >
-> P.s: In fact, if you don't download the dataset which I provided, you can just execute 'datasets/' in the 'SimGNN/' project root directory, and the 'GEDDataset' function will automatically download these dataset.
+> P.s: In fact, if you don't download the dataset which I provided, you can just execute `datasets/` in the `SimGNN/` project root directory, and the `GEDDataset` function will automatically download these dataset.
 
 ## Requirements:
 ```
