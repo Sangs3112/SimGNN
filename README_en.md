@@ -3,6 +3,9 @@
 
 **This implementation is modeled exactly according to the code setup in the SimGNN paper**
 
+![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
+![PyPI - Version](https://img.shields.io/pypi/v/pypi)
+
 [Chinese](./README.md) | English
 ## directory structure:
 ```
@@ -36,6 +39,7 @@ SimGNN/
 
 ## Requirements:
 ```
+pyyaml == 6.0.1
 python == 3.9
 numpy == 1.26
 scipy == 1.11
@@ -43,9 +47,6 @@ tqdm == 4.66.1
 texttable == 1.7
 torch == 2.1.0
 torch-geometric == 2.4.0
-torch-cluster == 1.6.3 + pt21cu121
-torch-scatter == 2.1.2 + pt21cu121
-torch-sparse == 0.6.18 + pt21cu121
 ```
 
 ## run:
@@ -62,3 +63,6 @@ python main.py --dataset ALKANE
 
 ## Result:
 Please wait for several days~~
+
+
+> If you like this project, please send us Stars ~

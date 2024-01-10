@@ -3,6 +3,9 @@
 
 **本实现完全按照SimGNN论文中的代码设置进行模型编写**
 
+![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
+![PyPI - Version](https://img.shields.io/pypi/v/pypi)
+
 中文版 | [English](./README_en.md)
 ## 目录结构:
 ```
@@ -36,6 +39,7 @@ SimGNN/
 
 ## 环境依赖:
 ```
+pyyaml == 6.0.1
 python == 3.9
 numpy == 1.26
 scipy == 1.11
@@ -43,9 +47,6 @@ tqdm == 4.66.1
 texttable == 1.7
 torch == 2.1.0
 torch-geometric == 2.4.0
-torch-cluster == 1.6.3 + pt21cu121
-torch-scatter == 2.1.2 + pt21cu121
-torch-sparse == 0.6.18 + pt21cu121
 ```
 
 ## run:
@@ -62,3 +63,6 @@ python main.py --dataset ALKANE
 
 ## 运行结果:
 施工中，等待更新，粗略看来至少数量级是对的。
+
+
+> 如果你喜欢这个的项目的话，请给我们Stars ~
