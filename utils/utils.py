@@ -1,4 +1,3 @@
-import dgl
 import yaml
 import torch
 import random
