@@ -103,7 +103,8 @@ class Trainer(object):
                 if cur_patience >= self._patience:
                     print("Early Stop!")
                     break
-        wandb.finish()
+        if self._wandb:
+            wandb.finish()
 
     def score(self, train_data, test_data):
         # 测试过程
