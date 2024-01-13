@@ -156,7 +156,7 @@ def get_config(args):
 
     config = _get_part_config('utils/config.yml')['SimGNN']
     config.update( _get_part_config('utils/config.yml')[args.dataset] )
-    config['log_path'] = args.log_path + args.dataset
+    config['log_path'] = args.log_path + args.dataset + '/'
 
     return config
 

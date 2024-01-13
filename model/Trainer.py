@@ -24,6 +24,7 @@ class Trainer(object):
         self._device = 'cuda:' + str(config['gpu_index']) if config['gpu_index'] >= 0 else 'cpu'
         
         self._model = SimGNN(config).to(self._device)
+
         if os.path.exists(config['log_path']) is False:
             os.makedirs(config['log_path'])
     
@@ -40,9 +41,9 @@ class Trainer(object):
             vloss = F.mse_loss(torch.cat(predictions), torch.cat(targets))
         return vloss
     
-    def fit(self, train_data, test_data):
+    def fit(self, train_data):
         # 训练过程
-        print("\n======= SimGNN training in {}. =======\n".format(self._log_path.split('/')[-1]))
+        print("\n======= SimGNN training in {}. =======\n".format(self._log_path.split('/')[-2]))
         if self._wandb:
             wandb.init(
                 project='SimGNN',
@@ -81,6 +82,9 @@ class Trainer(object):
             cur_tloss = round(cur_tloss / len(train_pairs_id), 5)
             if self._wandb:
                 wandb.log({'train_loss': cur_tloss})
+            else:
+                with open(self._log_path + 'train_loss.txt', 'a') as f:
+                    f.write(str(epoch) + '\t' + str(cur_tloss) + '\n')
             epochs.set_description("Epoch (Loss=%g)" % cur_tloss)
             
             if epoch + 1 >= self._start_val_iter:
@@ -100,6 +104,9 @@ class Trainer(object):
 
                 if self._wandb:
                     wandb.log({'valid_loss': cur_vloss, 'cur_patience': cur_patience})
+                else:
+                    with open(self._log_path + 'valid_loss.txt', 'a') as f:
+                        f.write(str(epoch) + '\t' + str(cur_vloss) + '\t' + str(cur_patience) + '\n')
                 if cur_patience >= self._patience:
                     print("Early Stop!")
                     break
@@ -108,7 +115,7 @@ class Trainer(object):
 
     def score(self, train_data, test_data):
         # 测试过程
-        print("\n======= SimGNN testing in {}. =======\n".format(self._log_path.split('/')[-1]))
+        print("\n======= SimGNN testing in {}. =======\n".format(self._log_path.split('/')[-2]))
         self._load()
         self._model.eval()
         

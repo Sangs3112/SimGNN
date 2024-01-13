@@ -9,7 +9,6 @@ if __name__ == '__main__':
 
     train_data, test_data, norm_ged = load_data(args.dataset_path, args.dataset)
     nice_printer(config)
-    
     trainer = Trainer(config, norm_ged)
-    trainer.fit(train_data, test_data)
+    trainer.fit(train_data)
     trainer.score(train_data, test_data)
