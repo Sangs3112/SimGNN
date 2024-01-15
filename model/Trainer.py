@@ -47,10 +47,10 @@ class Trainer(object):
         if self._wandb:
             wandb.init(
                 project='SimGNN',
-                name=self._log_path.split('/')[-1],
+                name=self._log_path.split('/')[-2],
                 config={
                     'learning_rate': self._lr,
-                    'dataset': self._log_path.split('/')[-1],
+                    'dataset': self._log_path.split('/')[-2],
                 })
 
             # wandb.watch(self._model, log='all', log_graph=True, log_freq=10)

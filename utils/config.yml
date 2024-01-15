@@ -4,7 +4,7 @@ SimGNN:
     seed: 42
     start_val_iter: 100   # 设置第几代开始验证，减少验证时间消耗
     every_val_iter: 1     # 开始验证后，每隔几代进行一次验证
-    gpu_index: 1          # 如果写-1，表示用cpu进行计算
+    gpu_index: 0          # 如果写-1，表示用cpu进行计算
     batch_size: 128
     lr: 0.001
     wandb: False          # 是否使用wandb联网记录训练结果
