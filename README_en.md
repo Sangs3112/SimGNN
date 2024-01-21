@@ -6,7 +6,7 @@
 ![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
 ![PyPI - Version](https://img.shields.io/pypi/v/pypi)
 
-[Chinese](./README.md) | English
+[中文版](./README.md) | English
 
 ## directory structure:
 ```
@@ -17,6 +17,7 @@ SimGNN/
 │   ├── IMDBMulti/
 │   ├── ...(may be other datasets)
 |   └── LINUX/
+├── imgs/               # contain the imgs files in readme
 ├── Logs/               # store log files
 ├── model/              # contain the model code
 │   ├── layers.py       # including 'Att' and 'NTN' modules
@@ -62,8 +63,30 @@ python main.py --dataset IMDBMulti
 python main.py --dataset ALKANE
 ```
 
-## Result:
+## Official Result:
+| datasets | MSE($10^{-3}$) | $\rho$ | $\tau$ | $p@10$ | $p@20$ |
+|:----:|:----:|:----:|:----:|:----:|:----:|
+| AIDS700nef | 1.189 | 0.843 | 0.690 | 0.421 | 0.514 |
+| LINUX | 1.509 | 0.939 | 0.830 | 0.942 | 0.933 |
+| IMDBMulti | 1.264 | 0.878 | 0.770 | 0.759 | 0.777 |
+
+## Self Result:
+### AIDS700nef:
+1. 
+![AIDS700nef_result_1](./imgs/AIDS700nef_1.png)
+
+2. 
+![AIDS700nef_result_2](./imgs/AIDS700nef_2.png)
+
+### LINUX
 Please wait for several days~~
 
+### IMDBMulti
+Please wait for several days~~
+
+### ALKANE
+- Unfortunately, this data set turned out to be abnormal.
+- But in [SimGNN paper](https://arxiv.org/abs/1808.05689), this `ALKANE` dataset is not covered in the official datasets, so I didn't look into why.
+- If you're interested, you can follow up on the problem.
 
 > If you like this project, please send us Stars ~

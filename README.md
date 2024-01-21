@@ -1,7 +1,7 @@
 # [SimGNN](https://arxiv.org/abs/1808.05689):
 `[WSDM 2019] SimGNN: A Neural Network Approach to Fast Graph Similarity Computation`
 
-**本实现完全按照[SimGNN论文](https://arxiv.org/abs/1808.05689)中的代码设置进行模型编写**
+**本实现完全按照[SimGNN论文](https://arxiv.org/abs/1808.05689)中的代码设置实现**
 
 ![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
 ![PyPI - Version](https://img.shields.io/pypi/v/pypi)
@@ -17,6 +17,7 @@ SimGNN/
 │   ├── IMDBMulti/
 │   ├── ...(may be other datasets)
 |   └── LINUX/
+├── imgs/               # 存放readme中的图片等资源
 ├── Logs/               # 存放日志文件
 ├── model/              # 模型代码
 │   ├── layers.py       # 包含Att模块，NTN模块
@@ -63,8 +64,30 @@ python main.py --dataset IMDBMulti
 python main.py --dataset ALKANE
 ```
 
-## 运行结果:
-施工中，等待更新，粗略看来至少数量级是对的。
+## 原文结果：
+| datasets | MSE($10^{-3}$) | $\rho$ | $\tau$ | $p@10$ | $p@20$ |
+|:----:|:----:|:----:|:----:|:----:|:----:|
+| AIDS700nef | 1.189 | 0.843 | 0.690 | 0.421 | 0.514 |
+| LINUX | 1.509 | 0.939 | 0.830 | 0.942 | 0.933 |
+| IMDBMulti | 1.264 | 0.878 | 0.770 | 0.759 | 0.777 |
 
+## 运行结果:
+### AIDS700nef:
+1. 
+![AIDS700nef_result_1](./imgs/AIDS700nef_1.png)
+
+2. 
+![AIDS700nef_result_2](./imgs/AIDS700nef_2.png)
+
+### LINUX
+施工中，等待更新。
+
+### IMDBMulti
+施工中，等待更新。
+
+### ALKANE
+- 可惜的是，这个数据集结果不太正常。
+- 不过[SimGNN原文](https://arxiv.org/abs/1808.05689)中也并没有涉及到这个数据集，因此我也没有仔细研究原因。
+- 有兴趣的话可以继续研究问题所在。
 
 > 如果你喜欢这个的项目的话，请给我们Stars ~
