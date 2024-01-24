@@ -71,20 +71,36 @@ python main.py --dataset ALKANE
 | IMDBMulti | 1.264 | 0.878 | 0.770 | 0.759 | 0.777 |
 
 ## Self Result:
-### AIDS700nef:
+### **AIDS700nef**
+Unfortunately, the results on the  `AIDS700nef` are missing the `wandb` log, so the loss per epoch and the `patience` record are missing.
+
 1. 
 ![AIDS700nef_result_1](./imgs/AIDS700nef_1.png)
 
 2. 
 ![AIDS700nef_result_2](./imgs/AIDS700nef_2.png)
 
-### LINUX
+### **LINUX**
+The `LINUX` result looks better than the original. Since the `LINUX` dataset does not have `label`, this implementation directly uses the degree's `onehot` encoding as the node's input feature.
+
+![LINUX_result](./imgs/LINUX.png)
+
+- Training loss records
+
+    <img src="./imgs/LINUX_train_loss.png" style="zoom:25%;" />
+
+- Validating loss records
+    
+    <img src="./imgs/LINUX_valid_loss.png" style="zoom:25%;" />
+
+- `patience` changes with each epoch, and the `patience` value is set to 30.
+    
+    <img src="./imgs/LINUX_patience.png" style="zoom:25%;" />
+
+### **IMDBMulti**
 Please wait for several days~~
 
-### IMDBMulti
-Please wait for several days~~
-
-### ALKANE
+### **ALKANE**
 - Unfortunately, this data set turned out to be abnormal.
 - But in [SimGNN paper](https://arxiv.org/abs/1808.05689), this `ALKANE` dataset is not covered in the official datasets, so I didn't look into why.
 - If you're interested, you can follow up on the problem.

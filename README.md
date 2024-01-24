@@ -72,20 +72,32 @@ python main.py --dataset ALKANE
 | IMDBMulti | 1.264 | 0.878 | 0.770 | 0.759 | 0.777 |
 
 ## 运行结果:
-### AIDS700nef:
+### **AIDS700nef**
+遗憾的是，`AIDS700nef`数据集上的结果丢失了`wandb`的日志记录，所以少了每代的损失以及`patience`记录。
 1. 
 ![AIDS700nef_result_1](./imgs/AIDS700nef_1.png)
 
 2. 
 ![AIDS700nef_result_2](./imgs/AIDS700nef_2.png)
 
-### LINUX
+### **LINUX**
+`LINUX`的结果看上去比原文更好。由于`LINUX`数据集没有`label`，所以本实现直接使用度的`onehot`编码作为节点的输入特征。
+![LINUX_result](./imgs/LINUX.png)
+- 训练损失记录
+    
+    <img src="./imgs/LINUX_train_loss.png" style="zoom:25%;" />
+- 验证损失记录
+
+    <img src="./imgs/LINUX_valid_loss.png" style="zoom:25%;" />
+
+- 每代`patience`变化，耐心值设置为30。
+
+    <img src="./imgs/LINUX_patience.png" style="zoom:25%;" />
+
+### **IMDBMulti**
 施工中，等待更新。
 
-### IMDBMulti
-施工中，等待更新。
-
-### ALKANE
+### **ALKANE**
 - 可惜的是，这个数据集结果不太正常。
 - 不过[SimGNN原文](https://arxiv.org/abs/1808.05689)中也并没有涉及到这个数据集，因此我也没有仔细研究原因。
 - 有兴趣的话可以继续研究问题所在。
