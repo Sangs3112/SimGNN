@@ -8,7 +8,7 @@
 
 [中文版](./README.md) | English
 
-## directory structure:
+## **directory structure**
 ```
 SimGNN/
 ├── datasets/           
@@ -17,7 +17,7 @@ SimGNN/
 │   ├── IMDBMulti/
 │   ├── ...(may be other datasets)
 |   └── LINUX/
-├── imgs/               # contain the imgs files in readme
+├── imgs/               # contain the imgs files in README
 ├── Logs/               # store log files
 ├── model/              # contain the model code
 │   ├── layers.py       # including 'Att' and 'NTN' modules
@@ -39,7 +39,7 @@ SimGNN/
 >
 > P.s: In fact, if you don't download the dataset which I provided, you can just execute `datasets/` in the `SimGNN/` project root directory, and the `GEDDataset` function will automatically download these dataset.
 
-## Requirements:
+## **Requirements**
 ```
 pyyaml == 6.0.1
 python == 3.9
@@ -51,7 +51,7 @@ torch == 2.1.0
 torch-geometric == 2.4.0
 ```
 
-## run:
+## **run**
 ```
 # AIDS700nef
 python main.py
@@ -63,14 +63,14 @@ python main.py --dataset IMDBMulti
 python main.py --dataset ALKANE
 ```
 
-## Official Result:
+## **Official Result**
 | datasets | MSE($10^{-3}$) | $\rho$ | $\tau$ | $p@10$ | $p@20$ |
 |:----:|:----:|:----:|:----:|:----:|:----:|
 | AIDS700nef | 1.189 | 0.843 | 0.690 | 0.421 | 0.514 |
 | LINUX | 1.509 | 0.939 | 0.830 | 0.942 | 0.933 |
 | IMDBMulti | 1.264 | 0.878 | 0.770 | 0.759 | 0.777 |
 
-## Self Result:
+## **Self Result**
 ### **AIDS700nef**
 Unfortunately, the results on the  `AIDS700nef` are missing the `wandb` log, so the loss per epoch and the `patience` record are missing.
 
@@ -98,7 +98,17 @@ The `LINUX` result looks better than the original. Since the `LINUX` dataset doe
     <img src="./imgs/LINUX_patience.png" style="zoom:25%;" />
 
 ### **IMDBMulti**
-Please wait for several days~~
+Similar to `LINUX`, `IMDBMulti` result looks better than the original, directly uses the degree's `onehot` encoding as the node's input feature.
+
+![IMDBMulti_result](./imgs/IMDBMulti.png)
+
+- Training loss records
+
+    <img src="./imgs/IMDBMulti_train_loss.png" style="zoom:25%;" />
+
+- Validating loss records
+    
+    <img src="./imgs/IMDBMulti_valid_loss.png" style="zoom:25%;" />
 
 ### **ALKANE**
 - Unfortunately, this data set turned out to be abnormal.

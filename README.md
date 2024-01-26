@@ -1,14 +1,14 @@
 # [SimGNN](https://arxiv.org/abs/1808.05689):
 `[WSDM 2019] SimGNN: A Neural Network Approach to Fast Graph Similarity Computation`
 
-**本实现完全按照[SimGNN论文](https://arxiv.org/abs/1808.05689)中的代码设置实现**
+**本实现完全按照[SimGNN论文](https://arxiv.org/abs/1808.05689)实验部分设置**
 
 ![GitHub License](https://img.shields.io/github/license/Sangs3112/SimGNN)
 ![PyPI - Version](https://img.shields.io/pypi/v/pypi)
 
 中文版 | [English](./README_en.md)
 
-## 目录结构:
+## **目录结构**
 ```
 SimGNN/
 ├── datasets/           # 存放数据集文件
@@ -17,7 +17,7 @@ SimGNN/
 │   ├── IMDBMulti/
 │   ├── ...(may be other datasets)
 |   └── LINUX/
-├── imgs/               # 存放readme中的图片等资源
+├── imgs/               # 存放README中的图片等资源
 ├── Logs/               # 存放日志文件
 ├── model/              # 模型代码
 │   ├── layers.py       # 包含Att模块，NTN模块
@@ -39,7 +39,7 @@ SimGNN/
 >
 > P.s: 实际上，如果你不下载我提供的数据集，也可以直接在`SimGNN/`项目根目录下创建`datasets/`目录，此时`GEDDataset`函数会自动下载数据集。
 
-## 环境依赖:
+## **环境依赖**
 ```
 pyyaml == 6.0.1
 wandb == 0.16.2
@@ -52,7 +52,7 @@ torch == 2.1.0
 torch-geometric == 2.4.0
 ```
 
-## run:
+## **run**
 ```
 # AIDS700nef
 python main.py
@@ -64,16 +64,17 @@ python main.py --dataset IMDBMulti
 python main.py --dataset ALKANE
 ```
 
-## 原文结果：
+## **原文结果**
 | datasets | MSE($10^{-3}$) | $\rho$ | $\tau$ | $p@10$ | $p@20$ |
 |:----:|:----:|:----:|:----:|:----:|:----:|
 | AIDS700nef | 1.189 | 0.843 | 0.690 | 0.421 | 0.514 |
 | LINUX | 1.509 | 0.939 | 0.830 | 0.942 | 0.933 |
 | IMDBMulti | 1.264 | 0.878 | 0.770 | 0.759 | 0.777 |
 
-## 运行结果:
+## **运行结果**
 ### **AIDS700nef**
 遗憾的是，`AIDS700nef`数据集上的结果丢失了`wandb`的日志记录，所以少了每代的损失以及`patience`记录。
+
 1. 
 ![AIDS700nef_result_1](./imgs/AIDS700nef_1.png)
 
@@ -83,9 +84,11 @@ python main.py --dataset ALKANE
 ### **LINUX**
 `LINUX`的结果看上去比原文更好。由于`LINUX`数据集没有`label`，所以本实现直接使用度的`onehot`编码作为节点的输入特征。
 ![LINUX_result](./imgs/LINUX.png)
+
 - 训练损失记录
     
     <img src="./imgs/LINUX_train_loss.png" style="zoom:25%;" />
+
 - 验证损失记录
 
     <img src="./imgs/LINUX_valid_loss.png" style="zoom:25%;" />
@@ -95,7 +98,16 @@ python main.py --dataset ALKANE
     <img src="./imgs/LINUX_patience.png" style="zoom:25%;" />
 
 ### **IMDBMulti**
-施工中，等待更新。
+与`LINUX`相同，`IMDBMulti`的结果比原文更好，`IMDBMulti`同样直接使用度的`onehot`编码作为节点的输入特征。
+![IMDBMulti_result](./imgs/IMDBMulti.png)
+
+- 训练损失记录
+
+    <img src="./imgs/IMDBMulti_train_loss.png" style="zoom:25%;" />
+
+- 验证损失记录
+
+    <img src="./imgs/IMDBMulti_valid_loss.png" style="zoom:25%;" />
 
 ### **ALKANE**
 - 可惜的是，这个数据集结果不太正常。
