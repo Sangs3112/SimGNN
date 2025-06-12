@@ -19,6 +19,10 @@ SimGNN/
 |   └── LINUX/
 ├── imgs/               # contain the imgs files in README
 ├── Logs/               # store log files
+│   ├── AIDS700nef/
+│   ├── IMDBMulti/
+│   ├── ...(may be other datasets)
+|   └── LINUX/
 ├── model/              # contain the model code
 │   ├── layers.py       # including 'Att' and 'NTN' modules
 │   ├── SimGNN.py       # the code of SimGNN
@@ -61,6 +65,13 @@ python main.py --dataset LINUX
 python main.py --dataset IMDBMulti
 # ALKANE
 python main.py --dataset ALKANE
+
+# AIDS700nef (test only)
+python main.py --test
+# LINUX (test only)
+python main.py --dataset LINUX --test
+# IMDBMulti (test only)
+python main.py --dataset IMDBMulti --test
 ```
 
 ## **Official Result**

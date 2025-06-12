@@ -23,6 +23,11 @@ class Parser:
                             , type=str
                             , default='./Logs/'
                             , help='path to logs')
+        
+        # 只进行测试
+        self.parser.add_argument('--test'
+                            , action='store_true'
+                            , help='test only (skip train)')
 
     def parse(self):
         args, unparsed = self.parser.parse_known_args()

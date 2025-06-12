@@ -19,6 +19,10 @@ SimGNN/
 |   └── LINUX/
 ├── imgs/               # 存放README中的图片等资源
 ├── Logs/               # 存放日志文件
+│   ├── AIDS700nef/
+│   ├── IMDBMulti/
+│   ├── ...(may be other datasets)
+|   └── LINUX/
 ├── model/              # 模型代码
 │   ├── layers.py       # 包含Att模块，NTN模块
 │   ├── SimGNN.py       # SimGNN模型部分
@@ -62,6 +66,13 @@ python main.py --dataset LINUX
 python main.py --dataset IMDBMulti
 # ALKANE
 python main.py --dataset ALKANE
+
+# AIDS700nef (test only)
+python main.py --test
+# LINUX (test only)
+python main.py --dataset LINUX --test
+# IMDBMulti (test only)
+python main.py --dataset IMDBMulti --test
 ```
 
 ## **原文结果**
